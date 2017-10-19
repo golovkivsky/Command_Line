@@ -1,13 +1,13 @@
-﻿1.  Создание папки folder
+﻿1. Create a directory named 'folder'
 
 mkdir folder
 cd folder
 
-2. Создание 5 файлов test_A, Test_B ...
+2. Creating 5 files test_A, Test_B ...
 
 touch test_{A..E}
 
-3. Запись текущей даты в каждый файл
+3. Recording the current date in each file
 3.1.
 
 date | tee test_{A..E}
@@ -19,11 +19,11 @@ do
 date > $t
 done
 
-4. Подсчет количества строк '2017' во всех файлах
+4. Count the number of lines '2017' in all files
 
 grep '2017' test_{A..E} | wc -l
 
-5. Убрать за собой
+5. Remove all files
 
 cd ..
 rm -rf folder
