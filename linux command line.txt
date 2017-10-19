@@ -1,0 +1,29 @@
+1. Создание папки folder
+
+mkdir folder
+cd folder
+
+2. Создание 5 файлов test_A, Test_B ...
+
+touch test_{A..E}
+
+3. Записать в каждый файл текущую дату
+3.1.
+
+date | tee test_{A..E}
+
+3.2.
+
+for t in test_{A..E}
+do
+date > $t
+done
+
+4. Посчитать количество строк '2017' во всех файлах
+
+grep '2017' test_{A..E} | wc -l
+
+5. Удалить все
+
+cd ..
+rm -rf folder
